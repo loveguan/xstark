@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ models_name }}列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+<h4>数据列表</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <a href="{{ add_url }}" class="btn btn-primary">添加数据</a>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    {% for item in head_list %}
+                        <th>{{ item }}</th>
+                    {% endfor %}
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    {% for data in new_data_list %}
+                        <tr>
+                            {% for item in data %}
+                                <td>{{ item }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
